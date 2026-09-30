@@ -3,10 +3,10 @@ Body size, litter size, newborn mass, and diet for mammal species
 
 This database has information on body size, litter size, newborn mass, and diet for 3443 mammal species. I built it for BIOLOGY 590S.
 
-Author: Muskaan Toshniwal
-Last updated: September 2026
-Main file: mammal_reproductive_investment.csv
-Each row represents one species.
+*Author: Muskaan Toshniwal
+*Last updated: September 2026
+*Main file: mammal_reproductive_investment.csv
+*Each row represents one species.
 
 ## Project question
 
