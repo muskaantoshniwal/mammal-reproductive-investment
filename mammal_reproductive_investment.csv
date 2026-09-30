@@ -1,4 +1,6 @@
-species_name,tree_tip,order,family,adultmass_g,log10mass,litter_size_n,litter_measured,neonate_mass_g,litter_mass_g,prop_investment,log10_neonate_mass,log10_prop_investment,placental,diet,diet_detailed,pct_animal,pct_invert,pct_vertebrate,pct_fruit,diet_interpolated
+
+species_name,tree_tip,order,family,adult_mass_g,log10_mass,litter_size_n,litter_measured,neonate_mass_g,litter_mass_g,prop_investment,log10_neonate_mass,log10_prop_investment,placental,diet,diet_detailed,pct_animal,pct_invert,pct_vertebrate,pct_fruit,diet_interpolated
+
 Amblysomus corriae,Amblysomus_corriae,Afrosoricida,Chrysochloridae,64.8,1.8116,1.93,N,NA,NA,NA,NA,NA,Y,carnivore,carnivore_invertebrate,100.0,100.0,0.0,0.0,N
 Amblysomus hottentotus,Amblysomus_hottentotus,Afrosoricida,Chrysochloridae,64.8,1.8116,1.93,Y,4.5,8.685,0.134,0.6532,-0.8728,Y,carnivore,carnivore_invertebrate,100.0,100.0,0.0,0.0,N
 Amblysomus marleyi,Amblysomus_marleyi,Afrosoricida,Chrysochloridae,64.8,1.8116,1.93,N,NA,NA,NA,NA,NA,Y,carnivore,carnivore_invertebrate,100.0,100.0,0.0,0.0,N
