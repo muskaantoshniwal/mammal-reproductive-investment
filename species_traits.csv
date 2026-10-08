@@ -1,4 +1,4 @@
-species_id,binomial,order,family,adult_body_mass_g,litter_size,neonate_mass_g,gestation_days,data_source
+species_id,binomial,taxon_order,family,adult_body_mass_g,litter_size,neonate_mass_g,gestation_days,data_source
 SP0001,Loxodonta africana,Proboscidea,Elephantidae,3940000,1,100000,660,EXAMPLE - replace with COMBINE value
 SP0002,Mus musculus,Rodentia,Muridae,20,6,1,19,EXAMPLE - replace with COMBINE value
 SP0003,Panthera leo,Carnivora,Felidae,160000,3,1500,110,EXAMPLE - replace with COMBINE value
