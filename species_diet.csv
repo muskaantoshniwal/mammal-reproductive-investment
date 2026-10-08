@@ -1,0 +1,6 @@
+species_id,binomial,diet_plant_pct,diet_animal_pct,trophic_level,trophic_label,data_source
+SP0001,Loxodonta africana,100,0,1,herbivore,EXAMPLE - replace with EltonTraits value
+SP0002,Mus musculus,80,20,2,omnivore,EXAMPLE - replace with EltonTraits value
+SP0003,Panthera leo,0,100,3,carnivore,EXAMPLE - replace with EltonTraits value
+SP0004,Vulpes vulpes,30,70,2,omnivore,EXAMPLE - replace with EltonTraits value
+SP0005,Odocoileus virginianus,100,0,1,herbivore,EXAMPLE - replace with EltonTraits value
