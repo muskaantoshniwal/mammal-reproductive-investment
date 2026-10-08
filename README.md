@@ -34,7 +34,7 @@ EltonTraits 1.0: more detailed information on what each species eats
 
 PHYLACINE 1.2: species name matching and the mammal phylogenetic tree
 
-# species_traits (COMBINE) and species_diet (EltonTraits) are linked by species_id (primary key in species_traits, foreign key in species_diet)
+## species_traits (COMBINE) and species_diet (EltonTraits) are linked by species_id (primary key in species_traits, foreign key in species_diet)
 
 ## How I built the database
 
