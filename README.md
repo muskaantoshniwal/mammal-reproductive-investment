@@ -36,6 +36,8 @@ PHYLACINE 1.2: species name matching and the mammal phylogenetic tree
 
 ## species_traits (COMBINE) and species_diet (EltonTraits) are linked by species_id (primary key in species_traits, foreign key in species_diet)
 
+## mammals.db is a SQLite database with 2 tables (species_traits, species_diet) linked by species_id. make_plots.R pulls data from it with a JOIN and makes the figures
+
 ## How I built the database
 
 I started with COMBINE, which had 3733 species with body mass, litter size, and broad diet information.
