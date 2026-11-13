@@ -1,0 +1,9 @@
+"test","comparison","mean_difference","t","df","p_value"
+"Paired t-test: body mass check","COMBINE mass vs specimen mass (log10)",-0.03,-2.11,187,0.036
+"Welch t-test: size-corrected litter size","Vertebrate-eaters vs herbivores",0.154,6.75,172.4,2.2e-10
+"Welch t-test: size-corrected litter size","Invertebrate-eaters vs herbivores",-0.094,-7.57,1410.3,6.9e-14
+"Welch t-test: size-corrected litter size","Omnivores vs herbivores",0.109,10.89,2424.7,5.3e-27
+"Welch t-test: size-corrected relative litter mass","Vertebrate-eaters vs herbivores",-0.131,-3.45,90.1,0.00087
+"Welch t-test: data check","Litter size not measured vs measured",0.009,0.92,1875,0.36
+"Welch t-test: data check","Diet estimated vs observed",-0.052,-3.75,564.7,0.00019
+"Welch t-test: size-corrected litter size (observed diets only)","Vertebrate-eaters vs herbivores",0.154,6.54,172.2,6.6e-10
