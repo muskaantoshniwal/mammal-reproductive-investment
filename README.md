@@ -38,6 +38,8 @@ PHYLACINE 1.2: species name matching and the mammal phylogenetic tree
 
 Campione & Evans (2012): femur and humerus (upper arm bone) length and circumference measured on museum skeletons, along with the body mass of each animal, which was weighed on a scale before it died or before it was turned into a skeleton. I downloaded these from the extants dataset in the MASSTIMATE R package, which was made by the first author of the paper.
 
+PHYLACINE 1.2 phylogeny (Faurby et al. 2018): the mammal family tree I used for PGLS. I used tree 1 of the 1000 trees in Complete_phylogeny.nex. This file is too large for GitHub (132 MB), so download it here and put it in the same folder as mammals.db: https://github.com/MegaPast2Future/PHYLACINE_1.2/blob/master/Data/Phylogenies/Complete_phylogeny.nex
+
 ## How I searched for data
 
 I looked for published, peer-reviewed mammal trait databases that cover most living mammals. I started with COMBINE because it already combines several earlier mammal databases and has body mass, litter size, and diet together. Then I added one source for each variable COMBINE did not have: EltonTraits for detailed diet, PanTHERIA for newborn mass, and PHYLACINE for species name matching and the phylogeny.
@@ -56,6 +58,10 @@ Later I searched for a published dataset of limb bone measurements for living ma
 | make_plots.R, make_slide_figures.R | Pull data from mammals.db with a JOIN and make the figures. |
 | make_femur_ttests.R | Compares my body mass data with the femur dataset, repeats the litter size analysis using femur size, and runs all the t-tests. |
 | ttest_results.csv | The results of every t-test. |
+| make_confounder_ttests.R | Tests whether vertebrate-eaters and herbivores of the same body size differ in young per year, pregnancy length, and nursing length (Welch t-tests). Uses litters per year, gestation length, and weaning age from COMBINE (PNC R package). |
+| confounder_ttests.csv | Results of the confounder t-tests. |
+| make_pgls.R | Repeats the litter size and relative litter mass analyses with PGLS, which accounts for relatedness between species. Needs Complete_phylogeny.nex (see Data sources). |
+| pgls_results.csv | Results of the PGLS models. |
 
 ## How I built the database
 
