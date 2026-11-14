@@ -58,14 +58,26 @@ cat("database mass is on average", round(10^mean(fem$log_db_mass - fem$log_speci
     "x the specimen mass\n")
 add_result("Paired t-test: body mass check", "COMBINE mass vs specimen mass (log10)", check)
 
-graph5 <- ggplot(fem, aes(log_specimen_mass, log_db_mass)) +
-  geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "grey40") +
-  geom_point(alpha = 0.6, size = 2) +
-  labs(x = "log10 specimen body mass (g), Campione & Evans 2012",
-       y = "log10 adult body mass (g), my database",
-       caption = "Dashed line = perfect agreement") +
+# label axes in real units (g / kg) instead of log10 numbers
+mass_breaks <- c(10, 100, 1000, 10000, 1e5, 1e6, 1e7)
+mass_labels <- c("10 g", "100 g", "1 kg", "10 kg", "100 kg", "1,000 kg", "10,000 kg")
+opossum <- subset(fem, species_name == "Marmosa murina")   # likely error in COMBINE
+
+graph5 <- ggplot(fem, aes(specimen_mass_g, adult_mass_g)) +
+  geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "grey50") +
+  geom_point(color = "#3b5b7a", alpha = 0.7, size = 2.4) +
+  annotate("segment", x = opossum$specimen_mass_g, xend = opossum$specimen_mass_g,
+           y = 6000, yend = opossum$adult_mass_g * 1.3, color = "grey30") +
+  annotate("text", x = opossum$specimen_mass_g * 0.8, y = 2e4, family = "Times", size = 4.5, hjust = 0,
+           label = "Murine mouse opossum: 518 g in COMBINE,\n59 g when weighed (likely error)") +
+  scale_x_log10(breaks = mass_breaks[1:6], labels = mass_labels[1:6]) +
+  scale_y_log10(breaks = mass_breaks, labels = mass_labels) +
+  annotate("text", x = 2e5, y = 2e4, label = "Dashed line: both sources\ngive the same mass",
+           family = "Times", size = 4.5, hjust = 0, color = "grey30") +
+  labs(x = "Body mass of the weighed museum animal (Campione & Evans 2012)",
+       y = "Species body mass in COMBINE") +
   my_theme
-ggsave("graph5_mass_check.png", graph5, width = 7, height = 5.5, dpi = 200)
+ggsave("graph5_mass_check.png", graph5, width = 8, height = 6, dpi = 200)
 
 # ---------- PART 2: does the result hold with femur size instead of body mass? ----------
 fem3 <- subset(fem, group %in% c("Herbivores", "Omnivores", "Vertebrate-eaters"))
@@ -90,14 +102,22 @@ print(summary(same_slope))
 cat("vertebrate-eaters vs herbivores at same femur size:",
     round(10^coef(same_slope)["groupVertebrate-eaters"], 2), "x litter size\n")
 
-graph6 <- ggplot(fem3, aes(log_fc, log_litter, color = group)) +
-  geom_point(alpha = 0.6, size = 2) +
-  geom_smooth(method = "lm", se = FALSE, linewidth = 1.4) +
-  scale_color_manual(values = diet_colors) +
-  labs(x = "log10 femur circumference (mm)", y = "log10 litter size", color = NULL,
-       subtitle = paste0(nrow(fem3), " species with femur data")) +
+# legend shows how many species are in each group
+n_per_group <- table(fem3$group)
+fem3$group_n <- factor(paste0(fem3$group, " (", n_per_group[as.character(fem3$group)], " species)"),
+  levels = paste0(names(n_per_group), " (", n_per_group, " species)"))
+colors_n <- setNames(diet_colors[names(n_per_group)], levels(fem3$group_n))
+
+graph6 <- ggplot(fem3, aes(femur_circumference_mm, litter_size_n, color = group_n)) +
+  geom_point(alpha = 0.55, size = 2.2) +
+  geom_smooth(method = "lm", se = FALSE, linewidth = 1.4, formula = y ~ x) +
+  scale_color_manual(values = colors_n) +
+  scale_x_log10(breaks = c(5, 10, 20, 50, 100, 200, 400)) +
+  scale_y_log10(breaks = c(1, 2, 3, 5, 8)) +
+  labs(x = "Femur circumference (mm)", y = "Number of young per litter", color = NULL) +
+  guides(color = guide_legend(nrow = 1)) +
   my_theme
-ggsave("graph6_femur_litter.png", graph6, width = 8, height = 5.5, dpi = 200)
+ggsave("graph6_femur_litter.png", graph6, width = 9, height = 6, dpi = 200)
 
 # ---------- PART 3: t-tests on size-corrected traits (all species) ----------
 # step 1: remove the effect of body mass (residuals from one line through all species)
