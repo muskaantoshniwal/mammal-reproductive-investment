@@ -1,0 +1,22 @@
+"model","term","estimate","p_value","lambda","n_species"
+"Litter size: different slopes","(Intercept)",0.325,0.13,0.97,3405
+"Litter size: different slopes","log10_mass",-0.015,0.051,0.97,3405
+"Litter size: different slopes","groupOmnivores",0.001,0.93,0.97,3405
+"Litter size: different slopes","groupInvertebrate-eaters",-0.019,0.43,0.97,3405
+"Litter size: different slopes","groupVertebrate-eaters",0.016,0.67,0.97,3405
+"Litter size: different slopes","log10_mass:groupOmnivores",0.001,0.85,0.97,3405
+"Litter size: different slopes","log10_mass:groupInvertebrate-eaters",-0.005,0.54,0.97,3405
+"Litter size: different slopes","log10_mass:groupVertebrate-eaters",-0.001,0.9,0.97,3405
+"Litter size: same slope","(Intercept)",0.326,0.13,0.97,3405
+"Litter size: same slope","log10_mass",-0.015,0.016,0.97,3405
+"Litter size: same slope","groupOmnivores",0.004,0.55,0.97,3405
+"Litter size: same slope","groupInvertebrate-eaters",-0.032,0.0092,0.97,3405
+"Litter size: same slope","groupVertebrate-eaters",0.012,0.42,0.97,3405
+"Litter size","Do slopes differ? (likelihood ratio test)",NA,0.85,NA,3405
+"Relative litter mass: different slopes","(Intercept)",-0.201,0.12,0.83,466
+"Relative litter mass: different slopes","log10_mass",-0.257,1.7e-34,0.83,466
+"Relative litter mass: different slopes","groupVertebrate-eaters",0.155,0.22,0.83,466
+"Relative litter mass: different slopes","log10_mass:groupVertebrate-eaters",0.024,0.47,0.83,466
+"Relative litter mass: same slope","(Intercept)",-0.222,0.083,0.83,466
+"Relative litter mass: same slope","log10_mass",-0.252,4.9e-39,0.83,466
+"Relative litter mass: same slope","groupVertebrate-eaters",0.226,0.0052,0.83,466
