@@ -1,0 +1,4 @@
+"variable","n_vertebrate_eaters","n_herbivores","times_herbivores","t","df","p_value"
+"Young per year",112,809,1.22,2.51,150.7,0.013
+"Pregnancy length (days)",127,855,0.88,-2.19,177.8,0.03
+"Nursing length (days to weaning)",111,781,0.9,-1.27,147.4,0.21
